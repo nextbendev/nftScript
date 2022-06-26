@@ -145,23 +145,23 @@ generate_unique_images(100, {
     },
     {
       "name": "Shirt",
-      "values": ["blue", "flannel", "green", "greenPeach", "grey", "luxury", "maroon", "red", "space", "trippy", "white", "cymaj"],
+      "values": ["Blue", "Flannel", "Green", "Peach", "Grey", "Luxury", "Maroon", "Red", "Space", "Trippy", "White", "Pink Gradient", "desert"],
       "trait_path": "../trait-layers/avaxShirt",
-      "filename": ["blue", "flannel", "green", "greenPeach", "grey", "luxury", "maroon", "red", "space", "trippy", "white", "cymaj"],
-      "weights": [10, 10, 10, 2, 37, 1, 10, 9, 2, 2, 1, 6]
+      "filename": ["blue", "flannel", "green", "greenPeach", "grey", "luxury", "maroon", "red", "space", "trippy", "white", "cymaj", "desert"],
+      "weights": [10, 10, 10, 2, 30, 1, 10, 9, 2, 2, 1, 6, 7]
     },     
     {
       "name": "Trait A",
-      "values": ["All Piercings", "Pierced Ears", "Left Piercing", "Right Piercing", "Nose Piercing", "None", "Gold Tooth", "Gold Grill", "Gem Grill", "AirPods", "Hand Rolled", "Vape", "Down Bad", "GM", "Hopium", "Everythings Ok", "Wen Rug?", "vee"],
+      "values": ["All Piercings", "Pierced Ears", "Left Piercing", "Right Piercing", "Nose Piercing", "None", "Gold Tooth", "Gold Grill", "Gem Grill", "AirPods", "Joint", "Vape", "Down Bad", "GM", "Hopium", "Everythings Ok", "Wen Rug?", "Vee"],
       "trait_path": "../trait-layers/Accessories",
       "filename": ["all", "ears", "Left", "right", "nose", "None", "SoloGold", "gold", "gems", "AirPods", "joint", "pax", "downbad", "GM", "hopium", "meme", "wenrug", "vee"],
       "weights": [.5, 4.5, 3, 1, 1.25, 69.75, .5, .5, .5, 3, 4, 2, 2, 2, 2, 2, 2, 1]
     },
     {
       "name": "Trait B",
-      "values": ["None", "Hoodie Brogo", "CB Main", "All Piercings", "Pierced Ears", "Left Piercing", "Right Piercing", "Nose Piercing", "Gold Tooth", "Gold Grill", "Gem Grill", "Brogo","Gold Brogo" ],
+      "values": ["None", "Hoodie Brogo", "CB Main", "All Piercings", "Pierced Ears", "Left Piercing", "Right Piercing", "Nose Piercing", "Gold Tooth", "Gold Grill", "Gem Grill", "Brogo","Chain" ],
       "trait_path": "../trait-layers/AccessoriesB",
-      "filename": ["None", "HoodieB", "MainB", "allB", "earsB", "LeftB", "rightB", "noseB", "SoloGoldB", "goldB", "gemsB", "spaceBrogo","GoldBrogo" ],
+      "filename": ["None", "HoodieB", "MainB", "allB", "earsB", "LeftB", "rightB", "noseB", "SoloGoldB", "goldB", "gemsB", "spaceBrogo","ChainB" ],
       "weights": [63.9, 5.9, 11.9, .5, .75, 3.5, .5,  2, 5.7, .9, .5,  2.9, 2.15 ] 
     }, 
     {
@@ -175,127 +175,55 @@ generate_unique_images(100, {
   "incompatibilities": [
     {
       "layer": "Trait A",
-       "value": "Fire",
-      "incompatable_with": ["Green Visor"]
-    },
-    {
-      "layer": "Trait A",
-       "value": "Blue Fire",
-      "incompatable_with": ["Green Visor"]
-    },
-    {
-      "layer": "Trait A",
-       "value": "Green Fire",
-      "incompatable_with": ["Green Visor"]
-    },
-     {
-      "layer": "Hoodie",
-       "value": "Hoodie Brogo",
-      "incompatable_with": ["Luxury"]
-    },
-    {
-      "layer": "Hoodie",
-       "value": "Hoodie Brogo",
-      "incompatable_with": ["Gold"]
-    },
-    {
-      "layer": "Hoodie",
-       "value": "Hoodie Brogo",
-      "incompatable_with": ["Trippy"]
-    },
-    {
-      "layer": "Hat",
-       "value": "Brogo C",
-      "incompatable_with": ["Luxury"]
-    },
-     
-    {
-      "layer": "Trait A",
-      "value": "CB Main",
-      "incompatable_with": ["CB Main Gold"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "Hoodie",
-      "incompatable_with": ["HoodieB"]
-    },
-     {
-      "layer": "Beard",
-      "value": "Chain",
-      "incompatable_with": ["Big Brown"]
-    },
-    {
-      "layer": "Beard",
-      "value": "Chain",
-      "incompatable_with": ["Big Black"]
-    },
-    {
-      "layer": "Beard",
-      "value": "Chain",
-      "incompatable_with": ["Big Blonde"]
-    },
-    {
-      "layer": "Beard",
-      "value": "Chain",
-      "incompatable_with": ["Big Grey"]
-    },
-    
-    {
-      "layer": "Trait B",
-      "value": "MainB",
-      "incompatable_with": ["Main"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "All PiercingsB",
-      "incompatable_with": ["All Piercings"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "Pierced EarsB",
-      "incompatable_with": ["Piercied Ears"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "Left PiercingB",
-      "incompatable_with": ["Left Piercing"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "Right PiercingB",
-      "incompatable_with": ["Right Piercing"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "Nose PiercingB",
-      "incompatable_with": ["Nose Piercing"]
-    },
-    {
-      "layer": "Trait B",
-      "value": "Gold ToothB",
+      "value": "joint",
       "incompatable_with": ["Gold Tooth"]
     },
     {
-      "layer": "Trait B",
-      "value": "Gold GrillB",
+      "layer": "Trait A",
+      "value": "joint",
       "incompatable_with": ["Gold Grill"]
     },
     {
-      "layer": "Trait B",
-      "value": "Ultra GrillB",
-      "incompatable_with": ["Ultra Grill"]
+      "layer": "Trait A",
+      "value": "joint",
+      "incompatable_with": ["Gem Grill"]
     },
     {
-      "layer": "Trait B",
-      "value": "Gas MaskB",
-      "incompatable_with": ["Gas Mask"]
+      "layer": "Trait A",
+      "value": "chain",
+      "incompatable_with": ["Big Brown"]
     },
     {
-      "layer": "Trait B",
-      "value": "ChainB",
-      "incompatable_with": ["Chain"]
+      "layer": "Trait A",
+      "value": "chain",
+      "incompatable_with": ["Big Black"]
     },
-     #  @dev : Blue backgrounds will never have the attribute "Python Logo 2".
+    {
+      "layer": "Trait A",
+      "value": "chain",
+      "incompatable_with": ["Big Blonde"]
+    },
+    {
+      "layer": "Trait A",
+      "value": "all",
+      "incompatable_with": ["All Piercings"]
+    },
+    {
+      "layer": "Trait A",
+      "value": "ears",
+      "incompatable_with": ["Pierced Ears"]
+    },
+    {
+      "layer": "Trait A",
+      "value": "left",
+      "incompatable_with": ["Left Piercing"]
+    },
+    {
+      "layer": "Trait A",
+      "value": "right",
+      "incompatable_with": ["Right Piercing"]
+    }
+
   ],
   "baseURI": "https://cryptobroskis.com/cryptobroskis/avaxMeta",
   "name": "CryptoBroski's #",
