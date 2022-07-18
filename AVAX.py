@@ -99,133 +99,618 @@ def generate_unique_images(amount, config):
         with open('./metadata/' + str(item["tokenId"]) + '.json', 'w') as outfile:
           json.dump(original_json, outfile, indent=4)
 
-generate_unique_images(100, {
+generate_unique_images(7777, {
   "layers": [
     {
       "name": "Background",
-      "weights": [1, 10, 10, 10, 10, 12, 10, 9, .5, .5, 4, 4, 1, 5, 7, 2, 1],
-      "values": ["Blue Splat", "Blue Gradient", "Maroon", "Blue", "Lt Blue", "Off White", "Orange", "Green", "Green Stripe", "Maroon Burst", "Blue Marble", "Green Texture", "Splatter", "Dots", "Brogo", "Studio", "Dream" ],
+      "weights": [1, 10, 10, 10, 10, 12, 10, 8.75, .5, .5, 4, 4, 1, 5, 7, 2, 1, .25],
+      "values": ["Blue Splat", "Blue Gradient", "Maroon", "Blue", "Lt Blue", "Off White", "Orange", "Green", "Damaged Green", "Maroon Burst", "Blue Marble", "Green Texture", "Splatter", "Dots", "Brogo", "Studio", "Dream", "Black" ],
       "trait_path": "../trait-layers/avaxBackground",
-      "filename": ["BGA", "BGB", "BGC", "BGD", "BGE", "BGF", "BGG", "BGH", "BGI", "BGJ", "BGK", "BGL","BGM", "BGN", "BGO", "BGP", "BGQ"  ]
+      "filename": ["BGA", "BGB", "BGC", "BGD", "BGE", "BGF", "BGG", "BGH", "BGI", "BGJ", "BGK", "BGL","BGM", "BGN", "BGO", "BGP", "BGQ", "Black"  ]
     },
     {
       "name": "Hoodie",
-      "values": ["Black", "Pink Gradient", "Green", "Green Peach", "Grey", "Plain", "Space", "Trippy", "White", "Splatter", "desert"],
+      "values": ["Black", "Sol", "Green", "Green Peach", "Grey", "Plain", "Space", "Trippy", "White", "Splatter", "Desert"],
       "trait_path": "../trait-layers/avaxHoodie",
       "filename": ["Black", "Cymaj", "green", "greenPeach", "grey", "hoodieBase", "space", "Trippy", "white", "yelowsplatter", "desert"],
       "weights": [20, 4, 20, 2, 24, 23, 3, 1, 1, 1, 3]
     },
     {
-      "name": "Skin-Tone",
-      "values": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "name": "Skin Tone",
+      "values": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "Ape", "Android", "White Walker", "Zombie"],
       "trait_path": "../trait-layers/Face",
-      "filename": ["almond", "chestnut", "choc", "golden", "honey", "limestone", "porcelain", "tan", "bronze", "paleivory"],
-      "weights": [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+      "filename": ["almond", "chestnut", "choc", "golden", "honey", "limestone", "porcelain", "tan", "bronze", "paleivory", "Ape", "android", "et", "zombie"],
+      "weights": [9.7, 9.7, 9.7, 9.7, 9.7, 9.7, 9.6, 9.6, 9.6, 9.7, .5, 1.05, .95, .7]
     },
     {
       "name": "Hat",
-      "values": ["Black", "Blue", "Cyan", "Green", "Grey", "Pink", "Neon Green", "Majenta", "White"],
+      "values": ["Black", "Blue", "Cyan", "Green", "Grey",  "Neon Green", "Bowler", "White", "Top hat" ],
       "trait_path": "../trait-layers/Hat",
-      "filename": ["black", "blue", "CM", "green", "grey", "hotPink", "Neon Green", "mc", "white"],
-      "weights": [22.9, 15, 1, 17, 38, .3, .9, .9, 6.9]
+      "filename": ["black", "blue", "CM", "green", "grey",  "NeonGreen", "Bowler", "white", "Tophat"],
+      "weights": [19.9, 18, 1, 17, 38,  .9, .9, 6.9, .3]
     },
     {
       "name": "Beard",
-      "values": ["None", "Brown", "Blonde", "Black", "Grey", "Big Brown", "Big Blonde", "Big Black", "Big Grey", "Moustache", "Goatee"],
+      "values": ["None", "Brown", "Blonde", "Black", "Grey", "Big Brown", "Big Blonde", "Big Black", "Big Grey", "Selleck", "Goatee", "Moustachio"],
       "trait_path": "../trait-layers/Beard",
-      "filename": ["None", "Brown", "Blonde", "Black", "Grey", "BrownBeard", "BlondeBeard", "BlackBeard", "greyBeard", "Moustache", "Goatee"],
-      "weights": [70.75, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1]
+      "filename": ["None", "Brown", "Blonde", "Black", "Grey", "brownBeard", "blondeBeard", "blackBeard", "greyBeard", "Moustache", "Goatee", "moust"],
+      "weights": [70.25, 3, 3, 3, 3, 3, 3, 3, 3, 1.7, 1, .05]
     },
-    {
-      "name": "Hat Type",
-      "values": ["AAVE", "ADA", "AVAX", "BSC", "DOGE", "BTC", "ETH", "LOOKS", "MATIC", "None", "Rare", "SHIB", "SOL", "XTZ", "TRX", "Brogo", "Illuminati"],
-      "trait_path": "../trait-layers/HatLogo",
-      "filename": ["aave", "ada", "avax", "bsc", "doge", "btc", "eth", "looks", "matic", "none", "RareEth", "shib", "sol", "tezos", "trx", "fullBrogo", "illuminati"],
-      "weights": [2, 2, 9, 2.75, 2, 1.75, 3.75, 2, 2, 61.50, 1.5, 2, 2, 2, 1.75, 1.75, 1]
-    },
+   
     {
       "name": "Shirt",
-      "values": ["Blue", "Flannel", "Green", "Peach", "Grey", "Luxury", "Maroon", "Red", "Space", "Trippy", "White", "Pink Gradient", "desert"],
+      "values": ["Blue", "Flannel", "Green", "Peach", "Grey", "Luxury", "Maroon", "Red", "Space", "Trippy", "White", "Sol", "Desert"],
       "trait_path": "../trait-layers/avaxShirt",
       "filename": ["blue", "flannel", "green", "greenPeach", "grey", "luxury", "maroon", "red", "space", "trippy", "white", "cymaj", "desert"],
-      "weights": [10, 10, 10, 2, 30, 1, 10, 9, 2, 2, 1, 6, 7]
+      "weights": [14, 2, 14, 2, 20, 1, 20, 9, 2, 2, 1, 6, 7]
     },     
     {
       "name": "Trait A",
-      "values": ["All Piercings", "Pierced Ears", "Left Piercing", "Right Piercing", "Nose Piercing", "None", "Gold Tooth", "Gold Grill", "Gem Grill", "AirPods", "Joint", "Vape", "Down Bad", "GM", "Hopium", "Everythings Ok", "Wen Rug?", "Vee"],
+      "values": [ "All Piercings",  "Utility Brogo",  "Pierced Ears", "Gem Gril", "Gold Grill", "Gold Brogo", "Pierced Left", "Brogo", "None", "Vape", "Pierced Right", "Gold Tooth", "St. Harambe"],
       "trait_path": "../trait-layers/Accessories",
-      "filename": ["all", "ears", "Left", "right", "nose", "None", "SoloGold", "gold", "gems", "AirPods", "joint", "pax", "downbad", "GM", "hopium", "meme", "wenrug", "vee"],
-      "weights": [.5, 4.5, 3, 1, 1.25, 69.75, .5, .5, .5, 3, 4, 2, 2, 2, 2, 2, 2, 1]
+      "filename": [ "all", "diamondBrogo", "ears", "gems", "gold", "goldBrogo",  "left", "basicLogo", "none", "pax", "right", "soloGold", "harambe" ],
+      "weights": [    1 ,         3,          7,     .5 ,     1.5  ,    1 ,          3,      7.5,       73,      2.25,      1,     2.75,       1]
     },
     {
       "name": "Trait B",
-      "values": ["None", "Hoodie Brogo", "CB Main", "All Piercings", "Pierced Ears", "Left Piercing", "Right Piercing", "Nose Piercing", "Gold Tooth", "Gold Grill", "Gem Grill", "Brogo","Chain" ],
-      "trait_path": "../trait-layers/AccessoriesB",
-      "filename": ["None", "HoodieB", "MainB", "allB", "earsB", "LeftB", "rightB", "noseB", "SoloGoldB", "goldB", "gemsB", "spaceBrogo","ChainB" ],
-      "weights": [63.9, 5.9, 11.9, .5, .75, 3.5, .5,  2, 5.7, .9, .5,  2.9, 2.15 ] 
-    }, 
+      "values": ["Air Pods",  "Dip", "Down Bad", "Gem Grill", "GM", "Gold Grill",  "Hoodie", "Hopium", "Joint", "Everythings Ok", "None", "Vape", "Gold Tooth", "Vee", "Wen", "Bags", "AVAX Hoodie"],
+      "trait_path": "../trait-layers/Accessories",
+      "filename": ["airPods",   "dip", "downbad",  "gems", "GM", "gold", "Hoodie", "hopium", "joint",  "meme", "none", "pax", "soloGold", "vee",  "wenrug", "zero", "avaxHoodie"],
+      "weights": [    2  ,         1,      1,       .25 ,    2 ,    .5  ,   3.75,      1,        4,      1,      73,     2,       1,       1.5,       2,      1.5,    3 ]
+    },
+    {
+      "name": "Trait C",
+      "values": ["AAVE", "ADA", "AVAX", "BSC", "DOGE", "BTC", "ETH", "LOOKS", "MATIC", "None", "Rare ETH", "SHIB", "SOL", "XTZ", "TRX", "Brogo", "Illuminati"],
+      "trait_path": "../trait-layers/HatLogo",
+      "filename": ["aave", "ada", "avax", "bsc", "doge", "btc", "eth", "looks", "matic", "none", "RareEth", "shib", "sol", "tezos", "trx", "fullBrogo", "illuminati"],
+      "weights": [1, 1, 5, 1.75, 2, 1.75, 1.75, 2, 2, 70.50, 1.5, 2, 2, 2, 1.75, 1.85, .9]
+    },
     {
       "name": "Eyes",
-      "values": ["Heterochromia", "Blue", "Brown", "Blue Lens", "Cyan Lens", "Gold Lens", "Green Lens", "Pink Lens", "Majenta Lens", "Purple Lens", "Red Lens", "Yellow Lens", "Green", "Aviator's", "Sunglasses", "3D", "Fire", "Blue Fire", "Green Fire", "Green Visor", "Red Visor"],
+      "values": ["Heterochromia", "Blue", "Brown", "Blue Lens", "Cyan Lens", "Gold Lens", "Green Lens", "Pink Lens", "Majenta Lens", "Purple Lens", "Red Lens", "Yellow Lens", "Green", "Aviator's", "Sunglasses", "3D", "Laser", "Blue Laser", "Green Laser", "Visor", "Terminator"],
       "trait_path": "../trait-layers/Eyes",
-      "filename": ["Split", "Blue", "Brown", "BlueLens", "Cyan", "Gold", "GreenLens", "HotPink", "Majenta", "Purple", "Red", "Yellow", "Green", "mirrorLens", "Sunglasses", "3D", "Fire", "BlueFire", "GreenFire", "Visor", "RedVisor"],
-      "weights": [1.4, 5.9, 29.1, 2.1, 2.9, 5.95, 3.55, 1, 2, 2.85, 3.25, 4, 3.9, .9, 24, .9, .9, .9, .8, .9, .9]
-    },
+      "filename": ["Split", "Blue", "Brown", "BlueLens", "Cyan", "Gold", "GreenLens", "HotPink", "Majenta", "Purple", "Red", "Yellow", "Green", "mirrorLens", "Sunglasses", "3D", "Fire", "BlueFire", "GreenFire", "visor", "terminate"],
+      "weights": [1, 5.9, 28.5, 2.1, 2.9, 5.95, 3.55, 1, 2, 2, 3.25, 4, 3.9, .9, 24.8, .9, 1.9, 1, .8, 2, .85 ]
+    }
   ],
   "incompatibilities": [
     {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["ADA"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["ETH"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["AvAX"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["BSC"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["BTC"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["LOOKS"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["Rare ETH"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["MATIC"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["SHIB"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["SOL"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["XTZ"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["TRX"]
+    },
+    {
+      "layer": "Hat",
+       "value": "Top Hat",
+      "incompatable_with": ["Yuga"]
+    },
+    {
+      "layer": "Trait B",
+       "value": "diamondBrogo",
+      "incompatable_with": ["Brogo"]
+    },
+    {
+      "layer": "Trait B",
+       "value": "diamondBrogo",
+      "incompatable_with": ["Gold Brogo"]
+    },
+    
+    {
       "layer": "Trait A",
-      "value": "joint",
+       "value": "all",
+      "incompatable_with": [" Blue Fire"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "ears",
+      "incompatable_with": [" Blue Fire"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "left",
+      "incompatable_with": [" Blue Fire"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["ADA"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["ETH"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["AvAX"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["BSC"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["BTC"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["LOOKS"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["Rare ETH"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["MATIC"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["SHIB"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["SOL"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["XTZ"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["TRX"]
+    },
+    {
+      "layer": "Trait C",
+       "value": "bowler",
+      "incompatable_with": ["Yuga"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "White Walker",
+      "incompatable_with": ["Nose"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "Android",
+      "incompatable_with": ["Nose"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "White Walker",
+      "incompatable_with": ["All"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "Android",
+      "incompatable_with": ["All"]
+    },
+    {
+      "layer": "Trait A",
+       "value": "Android",
       "incompatable_with": ["Gold Tooth"]
     },
     {
       "layer": "Trait A",
-      "value": "joint",
-      "incompatable_with": ["Gold Grill"]
-    },
-    {
-      "layer": "Trait A",
-      "value": "joint",
+       "value": "Android",
       "incompatable_with": ["Gem Grill"]
     },
     {
       "layer": "Trait A",
-      "value": "chain",
+       "value": "Android",
+      "incompatable_with": ["Gold Grill"]
+    },
+
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["BrownBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["BlackBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["BlondeBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["GreyBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
       "incompatable_with": ["Big Brown"]
     },
     {
-      "layer": "Trait A",
-      "value": "chain",
+      "layer": "Skin Tone",
+       "value": "ape",
       "incompatable_with": ["Big Black"]
     },
     {
-      "layer": "Trait A",
-      "value": "chain",
+      "layer": "Skin Tone",
+       "value": "ape",
       "incompatable_with": ["Big Blonde"]
     },
     {
-      "layer": "Trait A",
-      "value": "all",
-      "incompatable_with": ["All Piercings"]
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Big Grey"]
     },
     {
-      "layer": "Trait A",
-      "value": "ears",
-      "incompatable_with": ["Pierced Ears"]
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Big Brown"]
     },
     {
-      "layer": "Trait A",
-      "value": "left",
-      "incompatable_with": ["Left Piercing"]
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Big Black"]
     },
     {
-      "layer": "Trait A",
-      "value": "right",
-      "incompatable_with": ["Right Piercing"]
-    }
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Big Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Big Grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Big Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Big Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Big Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Big Grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Big Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Big Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Big Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Big Grey"]
+    },
 
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["brownBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["blackBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["blondeBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["greyBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["brownBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["blackBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["blondeBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["greyBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["brownBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["blackBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["blondeBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["greyBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["brownBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["blackBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["blondeBeard"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["greyBeard"]
+    },
+
+
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "ape",
+      "incompatable_with": ["Grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "android",
+      "incompatable_with": ["Grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "et",
+      "incompatable_with": ["Grey"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Brown"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Black"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Blonde"]
+    },
+    {
+      "layer": "Skin Tone",
+       "value": "zombie",
+      "incompatable_with": ["Grey"]
+    }
   ],
-  "baseURI": "https://cryptobroskis.com/cryptobroskis/avaxMeta",
+  "baseURI": "https://cryptobroskis.com/cryptobroskis/avaxImg",
   "name": "CryptoBroski's #",
   "description": "CryptoBroski's are a generative art project that aims to create a 100% solar powered crypto mining center. Owning a CryptoBroski gives you access to project's LP which will be fed with mining rewards.  www.cryptobroskis.com"
 })
